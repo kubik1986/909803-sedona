@@ -115,49 +115,51 @@
           <p><b class="hotel-search__lead">Заинтересовались?</b></p>
           <p class="hotel-search__invitation">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Cедоне</p>
           <a class="button button--dark hotel-search__button" href="hotel-search.html">Поиск гостиницы в Седоне</a>
-          <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
-            <div class="search-form__item">
-              <label class="search-form__label" for="check-in-date">Дата заезда:</label>
-              <input class="search-form__input" type="text" name="check-in-date" id="check-in-date" pattern="[1-9]{1}[0-9]{0,1} (января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря) 20[0-9]{2}" placeholder="24 апреля 2017">
-              <button class="search-form__calendar-btn" type="button">
-                <svg class="search-form__calendar-icon" width="21" height="22" focusable="false" aria-hidden="true">
-                  <use xlink:href="#calendar-icon"/>
-                </svg>
-                <span class="visually-hidden">Открыть календарь</span>
-              </button>
-            </div>
-            <div class="search-form__item">
-              <label class="search-form__label" for="check-out-date">Дата выезда:</label>
-              <input class="search-form__input" type="text" name="check-out-date" id="check-out-date" pattern="[1-9]{1}[0-9]{0,1} (января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря) 20[0-9]{2}" placeholder="4 июля 2017">
-              <button class="search-form__calendar-btn" type="button">
-                <svg class="search-form__calendar-icon" width="21" height="22" focusable="false" aria-hidden="true">
-                  <use xlink:href="#calendar-icon"/>
-                </svg>
-                <span class="visually-hidden">Открыть календарь</span>
-              </button>
-            </div>
-            <div class="search-form__item">
-              <label class="search-form__label" for="adults">Взрослые:</label>
-              <input class="search-form__input" type="number" name="adults" id="adults" min="1" step="1" value="1">
-              <button class="search-form__counter-btn search-form__counter-btn--minus" type="button">
-                <span class="visually-hidden">Уменьшить на 1</span>
-              </button>
-              <button class="search-form__counter-btn search-form__counter-btn--plus" type="button">
-                <span class="visually-hidden">Увеличить на 1</span>
-              </button>
-            </div>
-            <div class="search-form__item">
-              <label class="search-form__label" for="childs">Дети:</label>
-              <input class="search-form__input" type="number" name="childs" id="childs" min="0" step="1" value="0">
-              <button class="search-form__counter-btn search-form__counter-btn--minus" type="button">
-                <span class="visually-hidden">Уменьшить на 1</span>
-              </button>
-              <button class="search-form__counter-btn search-form__counter-btn--plus" type="button">
-                <span class="visually-hidden">Увеличить на 1</span>
-              </button>
-            </div>
-            <button class="button button--light search-form__submit-btn" type="submit">Найти</button>
-          </form>
+          <div class="search-form-wrapper">
+            <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
+              <div class="search-form__item">
+                <label class="search-form__label" for="check-in-date">Дата заезда:</label>
+                <input class="search-form__input" type="text" name="check-in-date" id="check-in-date" pattern="[1-9]{1}[0-9]{0,1} (января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря) 20[0-9]{2}" placeholder="24 апреля 2017">
+                <button class="search-form__calendar-btn" type="button">
+                  <svg class="search-form__calendar-icon" width="21" height="22" focusable="false" aria-hidden="true">
+                    <use xlink:href="#calendar-icon"/>
+                  </svg>
+                  <span class="visually-hidden">Открыть календарь</span>
+                </button>
+              </div>
+              <div class="search-form__item">
+                <label class="search-form__label" for="check-out-date">Дата выезда:</label>
+                <input class="search-form__input" type="text" name="check-out-date" id="check-out-date" pattern="[1-9]{1}[0-9]{0,1} (января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря) 20[0-9]{2}" placeholder="4 июля 2017">
+                <button class="search-form__calendar-btn" type="button">
+                  <svg class="search-form__calendar-icon" width="21" height="22" focusable="false" aria-hidden="true">
+                    <use xlink:href="#calendar-icon"/>
+                  </svg>
+                  <span class="visually-hidden">Открыть календарь</span>
+                </button>
+              </div>
+              <div class="search-form__item">
+                <label class="search-form__label" for="adults">Взрослые:</label>
+                <input class="search-form__input" type="number" name="adults" id="adults" min="1" step="1" value="1">
+                <button class="search-form__counter-btn search-form__counter-btn--minus" type="button">
+                  <span class="visually-hidden">Уменьшить на 1</span>
+                </button>
+                <button class="search-form__counter-btn search-form__counter-btn--plus" type="button">
+                  <span class="visually-hidden">Увеличить на 1</span>
+                </button>
+              </div>
+              <div class="search-form__item">
+                <label class="search-form__label" for="childs">Дети:</label>
+                <input class="search-form__input" type="number" name="childs" id="childs" min="0" step="1" value="0">
+                <button class="search-form__counter-btn search-form__counter-btn--minus" type="button">
+                  <span class="visually-hidden">Уменьшить на 1</span>
+                </button>
+                <button class="search-form__counter-btn search-form__counter-btn--plus" type="button">
+                  <span class="visually-hidden">Увеличить на 1</span>
+                </button>
+              </div>
+              <button class="button button--light search-form__submit-btn" type="submit">Найти</button>
+            </form>
+          </div>
           <div class="hotel-search__map"></div>
         </section>
       </main>
