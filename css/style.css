@@ -197,3 +197,154 @@ img {
 .main-menu__link--current:active {
   color: #766357;
 }
+
+/* greeting section */
+.greeting {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 75px;
+}
+
+.greeting__slider-btn {
+  position: absolute;
+  top: 410px;
+
+  width: 510px;
+  height: 100px;
+
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  opacity: 0;
+
+  transition: opacity 0.6s;
+}
+
+.greeting__slider-btn--prev {
+  left: 100px;
+
+  background-image: url("../img/arrow-prev.svg");
+
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+}
+
+.greeting__slider-btn--next {
+  right: 100px;
+
+  background-image: url("../img/arrow-next.svg");
+
+  transform: rotate(90deg);
+  transform-origin: right bottom;
+}
+
+.greeting__slider-btn:hover,
+.greeting__slider-btn:focus {
+  opacity: 0.7;
+  outline: none;
+}
+
+.greeting__slider-btn:active {
+  opacity: 0.4;
+
+  transition: none;
+}
+
+.greeting__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 510px;
+  overflow: hidden;
+
+  list-style: none;
+
+  background-color: #ccc6c5;
+}
+
+.greeting__slide {
+  position: absolute;
+  top: -83px;
+  left: 0;
+
+  width: 100%;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 1.5s;
+}
+
+.greeting__slide--current {
+  visibility: visible;
+  opacity: 1;
+}
+
+.greeting__welcome-text {
+  margin-bottom: 80px;
+}
+
+.greeting__wrapper {
+  position: relative;
+
+  padding: 60px 50px 50px;
+  width: 100%;
+
+  text-align: center;
+
+  background-color: #ffffff;
+}
+
+.greeting__title {
+  margin: 0 auto 28px;
+  width: 450px;
+
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.greeting__text {
+  margin: 0;
+
+  line-height: 26px;
+}
+
+.greeting__wrapper::before, /* slide mask */
+.greeting__wrapper::after {
+  position: absolute;
+  top: -58px;
+  left: 50%;
+
+  content: "";
+  width: 0;
+  height: 0;
+
+  border-top: 58px solid transparent;
+  border-bottom: none;
+}
+
+.greeting__wrapper::before {
+  left: 250px;
+
+  border-right: 350px solid #ffffff;
+  border-left: 350px solid #ffffff;
+}
+
+.greeting__wrapper::after {
+  left: 0;
+
+  border-right: 600px solid #ffffff;
+  border-left: 600px solid #ffffff;
+}
