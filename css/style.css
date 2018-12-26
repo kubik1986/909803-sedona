@@ -202,10 +202,6 @@ img {
 .greeting {
   position: relative;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   padding-top: 75px;
 }
 
@@ -291,7 +287,8 @@ img {
 }
 
 .greeting__welcome-text {
-  margin-bottom: 80px;
+  display: block;
+  margin: 0 auto 80px;
 }
 
 .greeting__wrapper {
