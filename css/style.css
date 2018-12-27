@@ -121,16 +121,20 @@ img {
   outline: none;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #888888;
 }
 
-::-moz-placeholder { /* Firefox 19+ */
+.input::-moz-placeholder { /* Firefox 19+ */
   color: #888888;
   opacity: 1;
 }
 
-:-ms-input-placeholder { /* IE 10+ */
+.input:-ms-input-placeholder { /* IE 10+ */
+  color: #888888;
+}
+
+.input::-ms-input-placeholder { /* Edge */
   color: #888888;
 }
 
@@ -505,4 +509,211 @@ img {
 
 .services__description {
   margin: 0;
+}
+
+/* hotel search */
+.hotel-search {
+  position: relative;
+
+  padding-top: 50px;
+
+  text-align: center;
+
+  background-color: #ffffff;
+}
+
+.hotel-search__lead {
+  margin: 0;
+  margin-bottom: 25px;
+
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.hotel-search__invitation {
+  margin: 0;
+  margin-bottom: 46px;
+
+  line-height: 24px;
+}
+
+.hotel-search__button {
+  padding: 30px;
+  width: 570px;
+
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.hotel-search__wrapper {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.hotel-search__map {
+  width: 100%;
+  height: 473px;
+
+  background-color: #ccdeaa;
+  background-image: url("../img/map.jpg");
+  background-size: cover;
+}
+
+.search-form {
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  left: 315px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 55px;
+  width: 570px;
+
+  background-color: #ffffff;
+  box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
+}
+
+.search-form__item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 30px;
+  width: 100%
+}
+
+.search-form__item--half {
+  width: 50%;
+}
+
+.search-form__item--half:nth-of-type(even) .search-form__label {
+  padding-right: 25px;
+  padding-left: 10px;
+
+  text-align: right;
+}
+
+.search-form__input-text,
+.search-form__input-num,
+.search-form__label {
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.search-form__label {
+  flex-grow: 1;
+
+  padding-right: 15px;
+
+  text-align: left;
+  letter-spacing: 0.02em;
+}
+
+.search-form__input-text {
+  margin-left: auto;
+  padding-right: 40px;
+  width: 345px;
+}
+
+.search-form__calendar-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 8px;
+  width: 38px;
+  height: 38px;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search-form__calendar-icon {
+  fill: #cacaca;
+}
+
+.search-form__calendar-btn:hover .search-form__calendar-icon,
+.search-form__calendar-btn:focus .search-form__calendar-icon {
+  fill: #000000;
+}
+
+.search-form__calendar-btn:active .search-form__calendar-icon {
+  fill: #81b3d2;
+}
+
+.search-form__input-num {
+  margin-left: auto;
+  padding-right: 38px;
+  padding-left: 38px;
+  width: 114px;
+
+  text-align: center;
+}
+
+.search-form__input-num::-webkit-outer-spin-button,
+.search-form__input-num::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.search-form__input-num {
+  -moz-appearance: textfield;
+}
+
+.search-form__input-num::-ms-clear {
+  display: none;
+}
+
+.search-form__counter-btn {
+  position: absolute;
+  top: 0;
+
+  padding: 0;
+  width: 38px;
+  height: 38px;
+
+  text-align: center;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search-form__counter-btn--minus {
+  right: 76px;
+}
+
+.search-form__counter-btn--plus {
+  right: 0;
+}
+
+.search-form__counter-icon {
+  stroke: #aaaaaa;
+}
+
+.search-form__counter-btn:hover .search-form__counter-icon,
+.search-form__counter-btn:focus .search-form__counter-icon {
+  stroke: #000000;
+}
+
+.search-form__counter-btn:active .search-form__counter-icon {
+  stroke: #81b3d2;
+}
+
+.search-form__submit-btn {
+  margin-top: 24px;
+  padding: 16px;
+  width: 100%;
+
+  font-size: 21px;
+  line-height: 26px;
 }
