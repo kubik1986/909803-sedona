@@ -220,36 +220,49 @@ img {
 
 .greeting__slider-btn {
   position: absolute;
-  top: 410px;
+  top: 0;
 
-  width: 510px;
-  height: 100px;
+  padding: 0;
+  width: 100px;
+  height: 710px;
 
   border: none;
   background-color: transparent;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
   opacity: 0;
+  cursor: pointer;
 
   transition: opacity 0.6s;
 }
 
 .greeting__slider-btn--prev {
-  left: 100px;
-
-  background-image: url("../img/arrow-prev.svg");
-
-  transform: rotate(-90deg);
-  transform-origin: left bottom;
+  left: 0;
 }
 
 .greeting__slider-btn--next {
-  right: 100px;
+  right: 0;
+}
 
+.greeting__slider-btn::after {
+  position: absolute;
+  top: 210px;
+  left: 10px;
+
+  width: 80px;
+  height: 80px;
+  content: "";
+}
+
+.greeting__slider-btn--prev::after {
+  background-image: url("../img/arrow-prev.svg");
+
+  transform: rotate(-90deg);
+}
+
+.greeting__slider-btn--next::after {
   background-image: url("../img/arrow-next.svg");
 
   transform: rotate(90deg);
-  transform-origin: right bottom;
 }
 
 .greeting__slider-btn:hover,
@@ -259,7 +272,7 @@ img {
 }
 
 .greeting__slider-btn:active {
-  opacity: 0.4;
+  opacity: 0.3;
 
   transition: none;
 }
@@ -273,8 +286,7 @@ img {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 510px;
-  overflow: hidden;
+  height: 710px;
 
   list-style: none;
 
