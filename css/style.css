@@ -389,12 +389,12 @@ img {
 .advantages__item-wrapper {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .advantages__item {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   flex-grow: 0;
   flex-shrink: 0;
@@ -416,12 +416,15 @@ img {
 
 .advantages__number {
   order: 2;
+
+  margin-bottom: 20px;
 }
 
 .advantages__title {
   order: 1;
 
   margin: 0;
+  margin-bottom: 24px;
   width: 160px;
 
   font-size: 21px;
