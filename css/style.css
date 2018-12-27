@@ -121,6 +121,19 @@ img {
   outline: none;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #888888;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: #888888;
+  opacity: 1;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  color: #888888;
+}
+
 /* main menu */
 .main-menu {
   position: relative;
@@ -344,4 +357,135 @@ img {
 
   border-right: 600px solid #ffffff;
   border-left: 600px solid #ffffff;
+}
+
+/* advantages section */
+.advantages__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.advantages__picture {
+  width: 800px;
+}
+
+.advantages__item-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  padding: 47px 60px 60px;
+  width: 400px;
+  min-height: 256px;
+
+  text-align: center;
+
+  background-color: #eeeeee;
+}
+
+.advantages__item--illustrated {
+  color: #ffffff;
+
+  background-color: #81b3d2;
+}
+
+.advantages__number {
+  order: 2;
+}
+
+.advantages__title {
+  order: 1;
+
+  margin: 0;
+  width: 160px;
+
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.advantages__item--illustrated .advantages__title  {
+  color: #ffffff;
+}
+
+.advantages__description {
+  order: 3;
+
+  margin: 0;
+  width: 280px;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  list-style: none;
+}
+
+.services__item {
+  position: relative;
+
+  padding: 160px 55px 82px;
+  width: 400px;
+
+  text-align: center;
+}
+
+.services__item::before {
+  position: absolute;
+  top: 56px;
+  left: 160px;
+
+  width: 80px;
+  height: 80px;
+  content: "";
+
+  background-repeat: no-repeat;
+}
+
+.services__item--accomodation::before {
+  background-image: url("../img/house-icon.svg");
+  background-position: 50% 4px;
+}
+
+.services__item--food::before {
+  background-image: url("../img/burger-icon.svg");
+  background-position: 50% 5px;
+}
+
+.services__item--souvenirs::before {
+  background-image: url("../img/souvenir-icon.svg");
+  background-position: 50% 0;
+}
+
+.services__title {
+  margin: 0;
+  margin-bottom: 25px;
+
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.services__description {
+  margin: 0;
 }
