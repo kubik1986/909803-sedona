@@ -717,3 +717,128 @@ img {
   font-size: 21px;
   line-height: 26px;
 }
+
+/* main footer */
+.main-footer {
+  display: flex;
+  align-items: center;
+
+  padding: 30px 0px;
+}
+
+.main-footer--inner {
+  border-top: 1px solid #e6e6e6;
+}
+
+.main-footer__item {
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  margin: 0;
+  padding: 0 15px;
+  width: 400px;
+
+  text-align: center;
+}
+
+.main-footer__hashtags {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.main-footer__socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  list-style: none;
+}
+
+.main-footer__social-item {
+  margin: 6px 3px;
+}
+
+.main-footer__social-link {
+  position: relative;
+
+  display: block;
+  padding: 5px;
+  width: 46px;
+  height: 48px;
+
+  background-color: #81b3d2;
+}
+
+.main-footer__social-link::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 46px;
+  height: 48px;
+  content: "";
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.main-footer__social-link--tw::after {
+  background-image: url("../img/tw-icon.svg");
+}
+
+.main-footer__social-link--fb::after {
+  background-image: url("../img/fb-icon.svg");
+}
+
+.main-footer__social-link--yt::after {
+  background-image: url("../img/yt-icon.svg");
+}
+
+.main-footer__social-link:hover,
+.main-footer__social-link:focus {
+  background-color: #669ec0;
+}
+
+.main-footer__social-link:active {
+  background-color: #5496bd;
+}
+
+.main-footer__social-link:active::after {
+  opacity: 0.3;
+}
+
+.main-footer__copyright {
+  display: flex;
+  align-items: center;
+
+  line-height: 26px;
+  color: #000000;
+}
+
+.main-footer__copyright-text {
+  margin-right: 8px;
+  margin-left: auto;
+
+  text-align: left;
+}
+
+.main-footer__copyright-link {
+  margin-right: auto;
+  width: 113px;
+  height: 39px;
+}
+
+.main-footer__copyright-logo {
+  fill: #231f20;
+}
+
+.main-footer__copyright-link:hover .main-footer__copyright-logo,
+.main-footer__copyright-link:focus .main-footer__copyright-logo {
+  fill: #81b3d2;
+}
+
+.main-footer__copyright-link:active .main-footer__copyright-logo {
+  fill: #bdbbbc;
+}
