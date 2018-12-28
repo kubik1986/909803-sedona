@@ -154,7 +154,8 @@ img {
   height: 72px;
 }
 
-.main-header__logo[href]:hover {
+.main-header__logo[href]:hover,
+.main-header__logo[href]:focus {
   transform: scale(1.2);
   transform-origin: top;
 }
@@ -971,6 +972,11 @@ input[type="radio"]:disabled + .filters-form__label::before {
 
 input[type="radio"]:checked:disabled + .filters-form__label::before {
   background-image: url("../img/radio-on-dis.svg");
+}
+
+input:focus + .filters-form__label::before {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
 }
 
 .filters-form__price-inputs {
