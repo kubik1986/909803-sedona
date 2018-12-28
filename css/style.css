@@ -1218,18 +1218,12 @@ input:focus + .filters-form__label::before {
   height: 0;
   content: "";
 
-  border-top-width: 0;
-  border-top-style: solid;
-  border-top-color: transparent;
-  border-right-width: 6px;
-  border-right-style: solid;
-  border-right-color: transparent;
+  border-top: 0 solid transparent;
+  border-right: 6px solid transparent;
   border-bottom-width: 10px;
   border-bottom-style: solid;
   border-bottom-color: #cacaca;
-  border-left-width: 6px;
-  border-left-style: solid;
-  border-left-color: transparent;
+  border-left: 6px solid transparent;
 }
 
 .hotels-sort__order-link--decrease::after {
