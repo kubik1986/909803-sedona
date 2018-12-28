@@ -1127,6 +1127,7 @@ input:focus + .filters-form__label::before {
   padding-bottom: 30px;
 
   border-bottom: 1px solid #e6e6e6;
+  background-color: #ffffff;
 }
 
 .hotels-sort__found {
@@ -1207,8 +1208,6 @@ input:focus + .filters-form__label::before {
   height: 11px;
 
   vertical-align: baseline;
-
-  /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
 .hotels-sort__order-link:last-of-type {
