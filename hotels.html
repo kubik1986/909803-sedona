@@ -37,9 +37,9 @@
         </nav>
       </header>
 
-      <main class="main-content-inner">
+      <main>
         <h1 class="visually-hidden">Поиск гостиниц в Седоне</h1>
-        <section class="filters">
+        <section class="filters inner-container">
           <h2 class="visually-hidden">Фильтры просмотра гостиниц</h2>
           <form class="filters-form" action="https://echo.htmlacademy.ru" method="get">
             <fieldset class="filters-form__filter">
@@ -47,20 +47,20 @@
               <ul class="filters-form__filter-list">
                 <li class="filters-form__option">
                   <label>
-                    <input  class="visually-hidden" type="checkbox" name="infrastructure" value="pool" checked>
-                    <span class="filters-form__label filters-form__label--checkbox">Бассейн</span>
+                    <input class="visually-hidden" type="checkbox" name="infrastructure" value="pool" checked>
+                    <span class="filters-form__label">Бассейн</span>
                   </label>
                 </li>
                 <li class="filters-form__option">
                   <label>
-                    <input  class="visually-hidden" type="checkbox" name="infrastructure" value="parking">
-                    <span class="filters-form__label filters-form__label--checkbox">Парковка</span>
+                    <input class="visually-hidden" type="checkbox" name="infrastructure" value="parking">
+                    <span class="filters-form__label">Парковка</span>
                   </label>
                 </li>
                 <li class="filters-form__option">
                   <label>
-                    <input  class="visually-hidden" type="checkbox" name="infrastructure" value="wi-fi">
-                    <span class="filters-form__label filters-form__label--checkbox">Wi-Fi</span>
+                    <input class="visually-hidden" type="checkbox" name="infrastructure" value="wi-fi">
+                    <span class="filters-form__label">Wi-Fi</span>
                   </label>
                 </li>
               </ul>
@@ -70,35 +70,31 @@
               <ul class="filters-form__filter-list">
                 <li class="filters-form__option">
                   <label>
-                    <input  class="visually-hidden" type="checkbox" name="accomodation" value="hotel" checked>
-                    <span class="filters-form__label filters-form__label--checkbox">Гостиница</span>
+                    <input class="visually-hidden" type="checkbox" name="accomodation" value="hotel" checked>
+                    <span class="filters-form__label">Гостиница</span>
                   </label>
                 </li>
                 <li class="filters-form__option">
                   <label>
-                    <input  class="visually-hidden" type="checkbox" name="accomodation" value="motel" checked>
-                    <span class="filters-form__label filters-form__label--checkbox">Мотель</span>
+                    <input class="visually-hidden" type="checkbox" name="accomodation" value="motel" checked>
+                    <span class="filters-form__label">Мотель</span>
                   </label>
                 </li>
                 <li class="filters-form__option">
                   <label>
-                    <input  class="visually-hidden" type="checkbox" name="accomodation" value="apartments" checked>
-                    <span class="filters-form__label filters-form__label--checkbox">Апартаменты</span>
+                    <input class="visually-hidden" type="checkbox" name="accomodation" value="apartments" checked>
+                    <span class="filters-form__label">Апартаменты</span>
                   </label>
                 </li>
               </ul>
             </fieldset>
             <div class="filters-form__filters-wrapper">
-              <fieldset class="filters-form__filter">
+              <fieldset class="filters-form__filter filters-form__filter--price">
                 <legend class="filters-form__legend filters-form__legend--price">Стоимость в сутки (&#8381;):</legend>
                 <div class="filters-form__price-inputs">
-                  <label class="filters-form__price-cell">
-                    <span class="filters-form__label">От</span>
-                    <input class="filters-form__price-input" type="number" name="min-price" id="min-price-field" min="0" max="3540" value="0">
+                  <label class="filters-form__price-cell">От <input class="filters-form__price-input" type="number" name="min-price" id="min-price-field" min="0" max="3540" value="0">
                   </label>
-                  <label class="filters-form__price-cell">
-                    <span class="filters-form__label">До</span>
-                    <input class="filters-form__price-input" type="number" name="max-price" id="max-price-field" min="0" max="3540" value="3000">
+                  <label class="filters-form__price-cell">До <input class="filters-form__price-input" type="number" name="max-price" id="max-price-field" min="0" max="3540" value="3000">
                   </label>
                 </div>
                 <div class="slider-contoller">
@@ -114,7 +110,7 @@
           </form>
         </section>
 
-        <section class="hotels-sort">
+        <section class="hotels-sort inner-container">
           <h2 class="visually-hidden">Сортировка гостиниц</h2>
           <div class="hotels-sort__found">
             <span>Найдено: </span>
@@ -144,7 +140,7 @@
         <section class="hotels">
           <h2 class="visually-hidden">Список гостиниц</h2>
           <ul class="hotels__list">
-            <li class="hotels__item">
+            <li class="hotels__item inner-container">
               <img class="hotels__photo" src="img/hotel-amara-tn.jpg" alt="Amara Resort &amp; Spa" width="135" height="90">
               <div class="hotels__info">
                 <div class="hotels__wrapper-row">
@@ -167,7 +163,7 @@
                 </div>
               </div>
             </li>
-            <li class="hotels__item">
+            <li class="hotels__item inner-container">
               <img class="hotels__photo" src="img/hotel-desert-tn.jpg" alt="Desert Quail Inn" width="135" height="90">
               <div class="hotels__info">
                 <div class="hotels__wrapper-row">
@@ -189,7 +185,7 @@
                 </div>
               </div>
             </li>
-            <li class="hotels__item">
+            <li class="hotels__item inner-container">
               <img class="hotels__photo" src="img/hotel-villas-tn.jpg" alt="Villas at Poco Diablo" width="135" height="90">
               <div class="hotels__info">
                 <div class="hotels__wrapper-row">
