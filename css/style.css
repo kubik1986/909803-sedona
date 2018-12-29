@@ -385,6 +385,8 @@ img {
   padding: 0;
 
   list-style: none;
+
+  background-color: #ffffff;
 }
 
 .advantages__picture {
@@ -394,7 +396,7 @@ img {
 .advantages__item-wrapper {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .advantages__item {
