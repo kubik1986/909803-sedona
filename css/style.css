@@ -1,16 +1,30 @@
 
 @keyframes pushing {
   0% {
-    transform: translateY(-396px);
+    transform: translateY(-700px);
     visibility: hidden;
   }
   1% {
-    transform: translateY(-396px);
+    transform: translateY(-700px);
     visibility: visible;
   }
   100% {
     transform: translateY(0);
     visibility: visible;
+  }
+}
+
+@keyframes diagonal-shadows {
+  0%, 50%, 100% {
+    box-shadow:
+      -4px 4px 3px 5px #a2d1ed,
+      4px -4px 3px 10px #5496bd;
+
+  }
+  25%, 75% {
+    box-shadow:
+      4px -4px 3px 5px #a2d1ed,
+      -4px 4px 3px 10px #5496bd;
   }
 }
 
@@ -152,6 +166,10 @@ img {
 
 .input::-ms-input-placeholder { /* Edge */
   color: #888888;
+}
+
+.input--error {
+  animation: diagonal-shadows 0.5s;
 }
 
 /* main menu */
