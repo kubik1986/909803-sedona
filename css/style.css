@@ -1,3 +1,19 @@
+
+@keyframes pushing {
+  0% {
+    transform: translateY(-396px);
+    visibility: hidden;
+  }
+  1% {
+    transform: translateY(-396px);
+    visibility: visible;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -518,6 +534,7 @@ img {
 .hotel-search {
   position: relative;
 
+  margin-bottom: -120px;
   padding-top: 50px;
 
   text-align: center;
@@ -553,7 +570,6 @@ img {
 .hotel-search__wrapper {
   position: relative;
 
-  margin-bottom: -120px;
   overflow: hidden;
 }
 
@@ -569,7 +585,6 @@ img {
 .search-form {
   position: absolute;
   top: 0;
-  bottom: auto;
   left: 315px;
 
   display: flex;
@@ -580,6 +595,16 @@ img {
 
   background-color: #ffffff;
   box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
+
+  visibility: hidden;
+}
+
+.search-form--opened {
+  animation: pushing 0.6s ease-out forwards;
+}
+
+.search-form--closed {
+  animation: pushing 0.6s ease-out reverse forwards;
 }
 
 .search-form__item {
