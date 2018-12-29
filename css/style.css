@@ -1068,9 +1068,14 @@ input:focus + .filters-form__label::before {
   background-color: #ffffff;
 }
 
+.filters-form__price-cell:last-of-type {
+  padding-left: 7px;
+}
+
 .filters-form__price-input {
   height: 32px;
   width: 40px;
+  max-width: 80px;
 
   font: inherit;
   color: inherit;
