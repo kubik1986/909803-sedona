@@ -110,6 +110,12 @@ var addQuantitySectionHandler = function(quantityObj) {
       target = target.parentNode;
     }
   });
+  quantityObj.btnMinus.addEventListener('mouseup', function(evt) {
+    this.blur();
+  });
+  quantityObj.btnPlus.addEventListener('mouseup', function(evt) {
+    this.blur();
+  });
 };
 
 var addQuantityFieldHandler = function(quantityObject) {

@@ -697,6 +697,10 @@ img {
   fill: #81b3d2;
 }
 
+.search-form__calendar-btn:active {
+  outline: none;
+}
+
 .search-form__input-num {
   margin-left: auto;
   padding-right: 38px;
@@ -754,6 +758,10 @@ img {
 
 .search-form__counter-btn:active .search-form__counter-icon {
   stroke: #81b3d2;
+}
+
+.search-form__counter-btn:active {
+  outline: none;
 }
 
 .search-form__submit-btn {
