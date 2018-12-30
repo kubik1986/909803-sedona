@@ -83,7 +83,7 @@ searchForm.addEventListener('submit', function(evt) {
 });
 
 function QuantityObj(quantitySection) {
-  this.section = quantitySection;
+  this.section = quantitySection; // num-fields and btns container
   this.field = quantitySection.querySelector('.search-form__input-num');
   this.btnMinus = quantitySection.querySelector('.search-form__counter-btn--minus');
   this.btnPlus = quantitySection.querySelector('.search-form__counter-btn--plus');
@@ -92,7 +92,7 @@ function QuantityObj(quantitySection) {
   addQuantityFieldHandler(this);
 }
 
-var addQuantitySectionHandler = function(quantityObj) {
+var addQuantitySectionHandler = function(quantityObj) { // сount-btns actions
   quantityObj.section.addEventListener('click', function(evt) {
     var target = evt.target;
     while (!target.classList.contains('search-form__item')) {
@@ -118,7 +118,7 @@ var addQuantitySectionHandler = function(quantityObj) {
   });
 };
 
-var addQuantityFieldHandler = function(quantityObject) {
+var addQuantityFieldHandler = function(quantityObject) {  // simple fields validation
   quantityObject.field.addEventListener('change', function() {
     var value = Math.round(+quantityObject.field.value);
     if (value < quantityObject.minQuantity) {
@@ -130,3 +130,90 @@ var addQuantityFieldHandler = function(quantityObject) {
 
 var adultsObj = new QuantityObj(searchForm.querySelector('.adults-quantity'));
 var childsObj = new QuantityObj(searchForm.querySelector('.childs-quantity'));
+
+
+// Slider.
+var sliderContainer = document.querySelector('.greeting');
+var slider = sliderContainer.querySelector('.greeting__slider');
+var prevBtn = sliderContainer.querySelector('.greeting__slider-btn--prev');
+var nextBtn = sliderContainer.querySelector('.greeting__slider-btn--next');
+var playBtn = sliderContainer.querySelector('.greeting__slider-btn--play');
+var slidesCol = slider.querySelectorAll('.greeting__slide');
+var slidesArr = Array.prototype.slice.call(slidesCol, 0);
+var currentSlide = slidesArr[0];
+var currentSlideIndex = +0;
+var timer;
+var isSlideShowStop = false;
+
+var checkIndex = function(index) {
+  if (index === slidesArr.length) {
+    currentSlideIndex = +0;
+  }
+  if (index < 0) {
+    currentSlideIndex = +(slidesArr.length - 1);
+  }
+};
+
+var changeSlide = function(index) {
+  currentSlide.classList.remove('greeting__slide--current');
+  currentSlide = slidesArr[index];
+  currentSlide.classList.add('greeting__slide--current');
+}
+
+var startTimer = function() {
+  timer = setInterval(function() {  // automatic slide switch
+    currentSlideIndex++;
+    checkIndex(currentSlideIndex);
+    changeSlide(currentSlideIndex);
+  }, 7000);
+};
+
+sliderContainer.addEventListener('click', function(evt) {  // manual slide switch
+  if (evt.target === nextBtn || evt.target === prevBtn) {
+    if (!isSlideShowStop) {
+      clearInterval(timer);
+      playBtn.classList.remove('greeting__slider-btn--play--stop');
+      playBtn.setAttribute('aria-label', 'Возобновить слайд-шоу');
+      isSlideShowStop = true;
+    }
+    if (evt.target === nextBtn) {
+      currentSlideIndex++;
+    }
+    if (evt.target === prevBtn) {
+      currentSlideIndex--;
+    }
+    checkIndex(currentSlideIndex);
+    changeSlide(currentSlideIndex);
+  }
+  if (evt.target === playBtn) {
+    if (isSlideShowStop) {
+      playBtn.classList.add('greeting__slider-btn--play--stop');
+      playBtn.setAttribute('aria-label', 'Остановить слайд-шоу');
+      currentSlideIndex++;
+      checkIndex(currentSlideIndex);
+      changeSlide(currentSlideIndex);
+      startTimer();
+      isSlideShowStop = false;
+      return;
+    }
+    if (!isSlideShowStop) {
+      clearInterval(timer);
+      playBtn.classList.remove('greeting__slider-btn--play--stop');
+      playBtn.setAttribute('aria-label', 'Возобновить слайд-шоу');
+      isSlideShowStop = true;
+      return;
+    }
+  }
+});
+
+prevBtn.addEventListener('mouseup', function(evt) {
+  this.blur();
+});
+nextBtn.addEventListener('mouseup', function(evt) {
+  this.blur();
+});
+playBtn.addEventListener('mouseup', function(evt) {
+  this.blur();
+});
+
+startTimer();
