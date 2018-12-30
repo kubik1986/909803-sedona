@@ -141,16 +141,16 @@ var playBtn = sliderContainer.querySelector('.greeting__slider-btn--play');
 var slidesCol = slider.querySelectorAll('.greeting__slide');
 var slidesArr = Array.prototype.slice.call(slidesCol, 0);
 var currentSlide = slidesArr[0];
-var currentSlideIndex = +0;
+var currentSlideIndex = 0;
 var timer;
 var isSlideShowStop = false;
 
 var checkIndex = function(index) {
   if (index === slidesArr.length) {
-    currentSlideIndex = +0;
+    currentSlideIndex = 0;
   }
-  if (index < 0) {
-    currentSlideIndex = +(slidesArr.length - 1);
+  else if (index < 0) {
+    currentSlideIndex = slidesArr.length - 1;
   }
 };
 
@@ -158,10 +158,10 @@ var changeSlide = function(index) {
   currentSlide.classList.remove('greeting__slide--current');
   currentSlide = slidesArr[index];
   currentSlide.classList.add('greeting__slide--current');
-}
+};
 
-var startTimer = function() {
-  timer = setInterval(function() {  // automatic slide switch
+var startTimer = function() {  // automatic slide switch
+  timer = setInterval(function() {
     currentSlideIndex++;
     checkIndex(currentSlideIndex);
     changeSlide(currentSlideIndex);
@@ -179,7 +179,7 @@ sliderContainer.addEventListener('click', function(evt) {  // manual slide switc
     if (evt.target === nextBtn) {
       currentSlideIndex++;
     }
-    if (evt.target === prevBtn) {
+    else if (evt.target === prevBtn) {
       currentSlideIndex--;
     }
     checkIndex(currentSlideIndex);
@@ -194,14 +194,12 @@ sliderContainer.addEventListener('click', function(evt) {  // manual slide switc
       changeSlide(currentSlideIndex);
       startTimer();
       isSlideShowStop = false;
-      return;
     }
-    if (!isSlideShowStop) {
+    else {
       clearInterval(timer);
       playBtn.classList.remove('greeting__slider-btn--play--stop');
       playBtn.setAttribute('aria-label', 'Возобновить слайд-шоу');
       isSlideShowStop = true;
-      return;
     }
   }
 });
