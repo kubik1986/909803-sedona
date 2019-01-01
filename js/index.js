@@ -138,80 +138,76 @@ var slider = sliderContainer.querySelector('.greeting__slider');
 var prevBtn = sliderContainer.querySelector('.greeting__slider-btn--prev');
 var nextBtn = sliderContainer.querySelector('.greeting__slider-btn--next');
 var playBtn = sliderContainer.querySelector('.greeting__slider-btn--play');
+var controlBtns = sliderContainer.querySelectorAll('.greeting__slider-btn');
 var slidesCol = slider.querySelectorAll('.greeting__slide');
 var slidesArr = Array.prototype.slice.call(slidesCol, 0);
 var currentSlide = slidesArr[0];
 var currentSlideIndex = 0;
 var timer;
-var isSlideShowStop = false;
-
-var checkIndex = function(index) {
-  if (index === slidesArr.length) {
-    currentSlideIndex = 0;
-  }
-  else if (index < 0) {
-    currentSlideIndex = slidesArr.length - 1;
-  }
+var isSlideShowPaused = false;
+var directions = {
+  next: function() {currentSlideIndex++},
+  prev: function() {currentSlideIndex--}
 };
 
-var changeSlide = function(index) {
+var setSlide = function(direction) {
+  direction();
+  if (currentSlideIndex === slidesArr.length) {
+    currentSlideIndex = 0;
+  }
+  else if (currentSlideIndex < 0) {
+    currentSlideIndex = slidesArr.length - 1;
+  }
   currentSlide.classList.remove('greeting__slide--current');
-  currentSlide = slidesArr[index];
+  currentSlide = slidesArr[currentSlideIndex];
   currentSlide.classList.add('greeting__slide--current');
 };
 
 var startTimer = function() {  // automatic slide switch
-  timer = setInterval(function() {
-    currentSlideIndex++;
-    checkIndex(currentSlideIndex);
-    changeSlide(currentSlideIndex);
-  }, 7000);
+  timer = setInterval(function() {setSlide(directions.next)}, 7000);
+};
+
+var stopShow = function() {  // pauses slide-show
+  clearInterval(timer);
+  playBtn.classList.remove('greeting__slider-btn--play--pause');
+  playBtn.setAttribute('aria-label', 'Возобновить слайд-шоу');
+  isSlideShowPaused = true;
+};
+
+var playShow = function() {  // restarts slide-show
+  startTimer();
+  playBtn.classList.add('greeting__slider-btn--play--pause');
+  playBtn.setAttribute('aria-label', 'Остановить слайд-шоу');
+  isSlideShowPaused = false;
+  setSlide(directions.next);
 };
 
 sliderContainer.addEventListener('click', function(evt) {  // manual slide switch
   if (evt.target === nextBtn || evt.target === prevBtn) {
-    if (!isSlideShowStop) {
-      clearInterval(timer);
-      playBtn.classList.remove('greeting__slider-btn--play--stop');
-      playBtn.setAttribute('aria-label', 'Возобновить слайд-шоу');
-      isSlideShowStop = true;
+    if (!isSlideShowPaused) {
+      stopShow();
     }
     if (evt.target === nextBtn) {
-      currentSlideIndex++;
+      setSlide(directions.next);
     }
     else if (evt.target === prevBtn) {
-      currentSlideIndex--;
+      setSlide(directions.prev);
     }
-    checkIndex(currentSlideIndex);
-    changeSlide(currentSlideIndex);
   }
   if (evt.target === playBtn) {
-    if (isSlideShowStop) {
-      playBtn.classList.add('greeting__slider-btn--play--stop');
-      playBtn.setAttribute('aria-label', 'Остановить слайд-шоу');
-      currentSlideIndex++;
-      checkIndex(currentSlideIndex);
-      changeSlide(currentSlideIndex);
-      startTimer();
-      isSlideShowStop = false;
+    if (isSlideShowPaused) {
+      playShow();
     }
     else {
-      clearInterval(timer);
-      playBtn.classList.remove('greeting__slider-btn--play--stop');
-      playBtn.setAttribute('aria-label', 'Возобновить слайд-шоу');
-      isSlideShowStop = true;
+      stopShow();
     }
   }
 });
 
-prevBtn.addEventListener('mouseup', function(evt) {
-  this.blur();
-});
-nextBtn.addEventListener('mouseup', function(evt) {
-  this.blur();
-});
-playBtn.addEventListener('mouseup', function(evt) {
-  this.blur();
-});
+for (var i = 0; i < controlBtns.length; i++) {  // removes focus after mouse click
+  controlBtns[i].addEventListener('mouseup', function(evt) {
+    this.blur();
+  });
+}
 
 startTimer();
