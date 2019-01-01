@@ -329,6 +329,10 @@ img {
   opacity: 0;
 }
 
+.greeting__slider-btn--play:active {
+  opacity: 0.9;
+}
+
 .greeting__slider-btn--play::after {
   position: absolute;
   top: 28px;
@@ -345,15 +349,16 @@ img {
   border-left: 22px solid #ffffff;
 }
 
-.greeting__slider-btn--play--stop::after {
-  left: 30px;
+.greeting__slider-btn--play--pause::after {
+  left: 31px;
 
-  width: 21px;
+  width: 18px;
   height: 22px;
   content: "";
 
   border: none;
-  background-color: #ffffff;
+  border-left: 6px solid #ffffff;
+  border-right: 6px solid #ffffff;
 }
 
 .greeting__slider {
