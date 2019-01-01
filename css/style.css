@@ -1252,7 +1252,7 @@ input:focus + .filters-form__label::before {
 
 .hotels-sort__title {
   margin: 0;
-  margin-right: 38px;
+  margin-right: 40px;
   width: 75px;
 
   color: #000000;
@@ -1265,7 +1265,7 @@ input:focus + .filters-form__label::before {
   margin: 0;
   padding: 0;
   padding-right: 30px;
-  width: 740px;
+  width: 720px;
 
   list-style: none;
 }
@@ -1298,6 +1298,8 @@ input:focus + .filters-form__label::before {
 }
 
 .hotels-sort__order {
+  align-self: flex-end;
+
   margin-left: auto;
 }
 
@@ -1305,22 +1307,21 @@ input:focus + .filters-form__label::before {
   position: relative;
 
   display: inline-block;
-  margin-right: 7px;
   padding: 2px;
-  width: 12px;
-  height: 11px;
+  width: 20px;
+  height: 20px;
 
-  vertical-align: baseline;
+  vertical-align: top;
 }
 
 .hotels-sort__order-link:last-of-type {
-  margin-right: 0;
+  margin-right: -4px;
 }
 
 .hotels-sort__order-link::after {
   position: absolute;
-  top: 0;
-  left: 0;
+  right: 4px;
+  bottom: 5px;
 
   width: 0;
   height: 0;
