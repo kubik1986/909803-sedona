@@ -499,7 +499,7 @@ img {
 .greeting__wrapper::before, /* slide mask */
 .greeting__wrapper::after {
   position: absolute;
-  top: -58px;
+  bottom: 100%;
   left: 50%;
 
   content: "";
