@@ -5,7 +5,7 @@ var maxPriceField = document.querySelector('#max-price-field');
 var minPrice = +minPriceField.getAttribute('min');
 var maxPrice = +maxPriceField.getAttribute('max');
 var AVERAGE_CHAR_WIDTH = 8; //px
-var PIXEL_CORRECTION = 2; //px
+var PIXEL_CORRECTION = 5; //px
 
 var grips = document.querySelectorAll('.slider-contoller__grip');
 var gripMin = document.querySelector('.slider-contoller__grip--min');
